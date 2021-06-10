@@ -1,0 +1,19 @@
+{
+  "name": "webdev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "autoprefixer": "^10.2.6",
+    "lodash": "^4.17.21",
+    "tailwindcss": "^2.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
