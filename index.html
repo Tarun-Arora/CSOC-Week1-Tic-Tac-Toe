@@ -23,22 +23,27 @@
             padding: 0%;
             text-align: center;
             background: url(1.jpg) no-repeat center fixed;
-            background-size:cover;
+            background-size: cover;
         }
 
         input[type="radio"] {
             -webkit-appearance: none;
         }
-        .res{
+
+        .res {
             color: red
         }
-        table{
+
+        table {
             table-layout: fixed;
             margin-left: auto;
             margin-right: auto;
             width: 250px;
         }
-        table,th,td{
+
+        table,
+        th,
+        td {
             border: 1px coral solid;
         }
 
@@ -51,31 +56,28 @@
         .setting i {
             font-size: 15px;
         }
-        button{
+
+        button {
             border: 2px solid black;
             border-radius: 8px;
             padding: 3px;
         }
-        .mode,.order,.icon{
+
+        .mode,
+        .order,
+        .icon {
             background-color: rgba(146, 46, 240, 0.774);
         }
-        @media (max-width: 680px) {
-            .mode,.order,.icon{
-                width: 80%;
-                height: 50%;
-                /* font-size: 10px; */
-                /* display: flex; */
-                /* justify-content: center; */
-            }   
-            /* .score,.setting,p{
-                margin-top: 0%;
-                margin-bottom: 0%;
-            }
-            .heading{
-                display: none;
-            } */
-        }
 
+        @media (max-width: 680px) {
+
+            .mode,
+            .order,
+            .icon {
+                width: 80%;
+                height: 30%;
+            }
+        }
     </style>
     <div class="nav inline min-w-full">
         <h2 class="text-center text-2xl mt-2 underline font-bold">Tic-Tac-Toe</h2>
@@ -86,30 +88,32 @@
             <p class="text-center underline p-5 text-xl bold">Choose Player Mode</p>
             <p class="ext-center underline pb-5 text-lg">Play vs </p>
             <div class="flex justify-center"><input type="radio" name="mode" id="user">
-            <label for="user" class="flex flex-col mr-5">
-                <i class="fa fa-solid fa-user user fa-2x" name="mode"></i>
-                <span>Human</span>
-            </label>
-            <input type="radio" name="mode" id="bot">
-            <label for="bot" class="flex flex-col">
-                <i class="fa fa-solid fa-robot fa-2x" name="bot"></i>
-                <span>Computer</span>
-            </label></div>
+                <label for="user" class="flex flex-col mr-5">
+                    <i class="fa fa-solid fa-user user fa-2x" name="mode"></i>
+                    <span>Human</span>
+                </label>
+                <input type="radio" name="mode" id="bot">
+                <label for="bot" class="flex flex-col">
+                    <i class="fa fa-solid fa-robot fa-2x" name="bot"></i>
+                    <span>Computer</span>
+                </label>
+            </div>
         </div>
     </div>
     <div class="icon hidden justify-center mt-20 min-w-full">
         <div class="icon fixed w-1/3 h-1/4">
             <p class="text-center underline p-5 pt-7 text-xl bold">Choose Your Icon</p>
             <div class="flex justify-center"><input type="radio" name="icon" id="cross">
-            <label for="cross" class="flex flex-col mr-5">
-                <i class="fas fa-times fa-2x" name="cross"></i>
-                <!-- <span>Human</span> -->
-            </label>
-            <input type="radio" name="icon" id="circle">
-            <label for="circle" class="flex flex-col">
-                <i class="far fa-circle fa-2x" name="circle"></i>
-                <!-- <span>Computer</span> -->
-            </label></div>
+                <label for="cross" class="flex flex-col mr-5">
+                    <i class="fas fa-times fa-2x" name="cross"></i>
+                    <!-- <span>Human</span> -->
+                </label>
+                <input type="radio" name="icon" id="circle">
+                <label for="circle" class="flex flex-col">
+                    <i class="far fa-circle fa-2x" name="circle"></i>
+                    <!-- <span>Computer</span> -->
+                </label>
+            </div>
         </div>
     </div>
 
@@ -117,15 +121,16 @@
         <div class="order fixed w-1/3 h-1/4">
             <p class="class=text-center underline p-5 text-xl bold">Who Will Get A Move First?</p>
             <div class="flex justify-center"><input type="radio" name="order" id="userFirst">
-            <label for="userFirst" class="flex flex-col mr-5">
-                <i class="fa fa-solid fa-user fa-2x" name="human"></i>
-                <span>Human</span>
-            </label>
-            <input type="radio" name="order" id="botFirst">
-            <label for="botFirst" class="flex flex-col">
-                <i class="fa fa-solid fa-robot fa-2x" name="bot"></i>
-                <span>Computer</span>
-            </label></div>
+                <label for="userFirst" class="flex flex-col mr-5">
+                    <i class="fa fa-solid fa-user fa-2x" name="human"></i>
+                    <span>You</span>
+                </label>
+                <input type="radio" name="order" id="botFirst">
+                <label for="botFirst" class="flex flex-col">
+                    <i class="fa fa-solid fa-robot fa-2x" name="bot"></i>
+                    <span>Computer</span>
+                </label>
+            </div>
         </div>
     </div>
     <br>

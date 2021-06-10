@@ -1,6 +1,5 @@
 var score=[0,0,0];  //p1 tie p2
 const icons = ['<i class="far fa-circle fa-3x" name="circle"></i>', '<i class="fas fa-times fa-3x" name="cross"></i>'];
-// const icons1 = ['<i class="far fa-circle" name="circle" fa-1x></i>', '<i class="fas fa-times fa-1x" name="cross"></i>'];
 var chance = 0, p1,player1=document.querySelector('.player1'),player2=document.querySelector('.player2'), p2,bot = 1,val = 0,resultGiven=0;
 var key = [[document.querySelector('.row0 .col0'), document.querySelector('.row0 .col1'), document.querySelector('.row0 .col2')], [document.querySelector('.row1 .col0'), document.querySelector('.row1 .col1'), document.querySelector('.row1 .col2')], [document.querySelector('.row2 .col0'), document.querySelector('.row2 .col1'), document.querySelector('.row2 .col2')]]
 
@@ -17,19 +16,19 @@ function takeicon(playwithbot) {
     document.querySelector('.icon').style.display = 'flex';
     if (bot) {
         p1 = 'Computer';
-        p2 = 'You';
+        while(p2==null)p2 = prompt('Please Enter Your Name','Player');
         document.getElementById('cross').addEventListener('click', () => getOrder(0));
         document.getElementById('circle').addEventListener('click', () => getOrder(1));
     }
     else {
-        p1 = 'Player1',p2 = 'Player2';
+        while(p1==null)p1 = prompt('Player 1 Enter Your Name','Player1');
+        while(p2==null)p2 = prompt('Player 2 Enter Your Name','Player2');
         document.getElementById('cross').addEventListener('click', () => play('a'));
         document.getElementById('circle').addEventListener('click', () => play());
     }
 }
 
 function reset() {
-    // console.log('hi')
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             board[i][j] = -1;
@@ -45,7 +44,7 @@ function getOrder(chosenIcon) {
         icons[0] = icons[1];
         icons[1] = ty;
     }
-    document.querySelector('.icon1').innerHTML = `Player : ${icons[1]}`
+    document.querySelector('.icon1').innerHTML = `${p2}: ${icons[1]}`
     document.querySelector('.icon2').innerHTML = `Computer : ${icons[0]}`
     document.querySelector('.icon').style.display = 'none';
     document.querySelector('.order').style.display = 'flex';
@@ -169,7 +168,7 @@ function play(val) {
             document.querySelector('.firstChance').innerHTML = "First Chance: Computer";
             findBestMove(board);
         }
-        else document.querySelector('.firstChance').innerHTML = "First Chance: Player";
+        else document.querySelector('.firstChance').innerHTML = `First Chance: ${p1}`;
     }
     else {
         if (val == 'a') {
@@ -177,9 +176,9 @@ function play(val) {
             icons[0] = icons[1];
             icons[1] = ty;
         }
-        document.querySelector('.icon1').innerHTML = `Player1 : ${icons[0]}`;
-        document.querySelector('.icon2').innerHTML = `Player2 : ${icons[1]}`;
-        document.querySelector('.firstChance').innerHTML = "First Chance: Player1";
+        document.querySelector('.icon1').innerHTML = `${p1} : ${icons[0]}`;
+        document.querySelector('.icon2').innerHTML = `${p2} : ${icons[1]}`;
+        document.querySelector('.firstChance').innerHTML = `First Chance: ${p1}`;
         document.querySelector('.icon').style.display = 'none';
         chance = 1;
     }
@@ -188,6 +187,7 @@ function play(val) {
 function declareResult() {
     let rematch = document.querySelector('.rematch');
     document.querySelector('.result').style.display = 'block';
+    // console.log(checkwinner(board));
     rematch.addEventListener('click', () => reset())
     let res = document.querySelector('.res');
     if(resultGiven==1)return;
@@ -197,7 +197,7 @@ function declareResult() {
         document.querySelector('.p1s').innerHTML=score[0];
     }
     else if (checkwinner(board) == 1) {
-        res.innerHTML(`${p2} Won.`);
+        res.innerHTML=(`${p2} Won.`);
         score[2]++;
         document.querySelector('.p2s').innerHTML=score[2];
     }
