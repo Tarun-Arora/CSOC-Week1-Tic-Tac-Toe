@@ -168,7 +168,7 @@ function play(val) {
             document.querySelector('.firstChance').innerHTML = "First Chance: Computer";
             findBestMove(board);
         }
-        else document.querySelector('.firstChance').innerHTML = `First Chance: ${p1}`;
+        else document.querySelector('.firstChance').innerHTML = `First Chance: ${p2}`;
     }
     else {
         if (val == 'a') {
